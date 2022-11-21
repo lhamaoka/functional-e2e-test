@@ -2,7 +2,7 @@ pipeline{
 
   agent {
     node {
-        label 'nodo-java'
+        label 'pring-boot-app'
     }
   }
 
@@ -16,7 +16,7 @@ pipeline{
             sh 'rm -r configuracion'
           }
         }
-        sh 'git clone https://github.com/dberenguerdevcenter/kubernetes-helm-docker-config.git configuracion --branch test-implementation'
+        sh 'git clone https://github.com/lhamaoka/kubernetes-helm-docker-config.git configuracion --branch test-implementation'
         sh 'kubectl apply -f configuracion/kubernetes-deployment/standalone-chrome/manifest.yml -n default --kubeconfig=configuracion/kubernetes-config/config'
       }
 
