@@ -2,7 +2,7 @@ pipeline{
 
   agent {
     node {
-        label 'pring-boot-app'
+        label 'spring-boot-app'
     }
   }
 
