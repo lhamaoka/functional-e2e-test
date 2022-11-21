@@ -16,7 +16,7 @@ public class AddTutorial implements Task {
     @Override
     @Step("{0} navigate to the form section")
     public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(Open.relativeUrl("https://d87d87a9fbdf7a.lhr.life/tutorials"));
+        actor.attemptsTo(Open.relativeUrl("https://tender-wasps-tan-213-0-57-163.loca.lt"));
         actor.attemptsTo(FillAddTutorialForm.fill());
     }
 
