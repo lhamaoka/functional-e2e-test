@@ -38,7 +38,7 @@ spec:
             sh 'rm -r launcher'
           }
         }
-        sh 'git clone https://github.com/lhamaoka/manifest_launcher.git launcher --branch test-implementation'
+        sh 'git clone https://github.com/lhamaoka/manifest_launcher.git launcher'
         sh 'kubectl apply -f launcher/deploys/standalone-chrome/manifest.yaml -n default --kubeconfig=launcher/config/config'
       }
 
