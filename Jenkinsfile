@@ -12,12 +12,12 @@ pipeline{
 
       steps{
         script {
-          if(fileExists("configuracion")){
-            sh 'rm -r configuracion'
+          if(fileExists("launcher")){
+            sh 'rm -r launcher'
           }
         }
-        sh 'git clone https://github.com/dberenguerdevcenter/kubernetes-helm-docker-config.git configuracion --branch test-implementation'
-        sh 'kubectl apply -f configuracion/kubernetes-deployment/standalone-chrome/manifest.yml -n default --kubeconfig=configuracion/kubernetes-config/config'
+        sh 'git clone https://github.com/lhamaoka/manifest_launcher.git launcher --branch test-implementation'
+        sh 'kubectl apply -f launcher/deploys/standalone-chrome/manifest.yaml -n default --kubeconfig=launcher/config/config'
       }
 
     }
