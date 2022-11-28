@@ -43,29 +43,6 @@ spec:
       }
 
     }
-
-    stage('Run function testing E2E') {
-      steps {
-        sh 'mvn clean verify -Dwebdriver.remote.url=https://9f17-148-3-112-184.eu.ngrok.io/wd/hub -Dwebdriver.remote.driver=chrome -Dchrome.switches="--no-sandbox,--ignore-certificate-errors,--homepage=about:blank,--no-first-run,--headless"'
-      }
-    }
-
-    stage('Generate Cucumber Report') {
-      steps {
-        sh 'mvn serenity:aggregate'
-
-        publishHTML(target: [
-            reportName : 'Serenity',
-            reportDir:   'target/site/serenity',
-            reportFiles: 'index.html',
-            keepAll:     true,
-            alwaysLinkToLastBuild: true,
-            allowMissing: false
-        ])
-
-      }
-    }
-
   }
 
   post {
